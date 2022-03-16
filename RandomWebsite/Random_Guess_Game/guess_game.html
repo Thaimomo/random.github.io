@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+          "width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="guess_game.css">
+
+    <header id=header>
+	
+        <img id=header-img class=logo src=# alt=...>
+        
+        <nav id=nav-bar>
+            <ul class="line-animate">
+          <li class="hover"><a id=home class="nav-link" href=#>Home</a></li>
+                <li class="hover nav-dropdown" id=random-nav><a id=randomSelect class=nav-link href=#>Random
+                  <ul class="dropdown" id="random-projects">
+              <li><a href="/Random_Upon_Input/input.html">Random Input</a></li>
+              <li><a href="/Random_Guess_Game/guess_game.html">Guessing game</a></li>
+              <li class="omoText"><a href="/White_Space/omo.html">White Space</a></li>
+            </ul></a>
+                </li>
+                <li class="hover"><a id=about class=nav-link href=#>About</a></li>
+            </ul>	
+        </nav>
+    </header>
+    
+    <body>
+  
+    <div id=main-console>
+        <h1>Random javascript guessing game</h1>
+    <div id=min-max>
+    <input type="text" placeholder="Min number" id="min" value="1">
+    <input type="text" placeholder="Max number" id="max" value="10">
+    </div>
+    
+    <button id="newNum" onclick="callRandNum()">Call new number</button>
+    
+    <input type="text" placeholder="Enter your guess" id="guess" value="">
+    
+    <button id="enter" onclick="rightOrWrong()">Enter</button>
+    
+    
+    <p class="text" id="answer"></p>
+    </div>
+    
+    <script src="guess_game.js"></script>
+    </body>
+
+    <footer id=footer>
+      <ul>
+        <li><a href=#>Privacy</a>
+        <li><a href=#>Terms</a>
+        <li><a href=#>Contact</a>
+      </ul>
+      <span>Copyright 2016, Thai Guy
+    </footer>

@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+
+@font-face {
+  font-family: 'OMORI_GAME';
+  src: url('/fonts/omori_game2-webfont.woff2') format('woff2'),
+       url('/fonts/omori_game2-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'OMORI_GAME2';
+  src: url('/fonts/omori_game-webfont.woff2') format('woff2'),
+       url('/fonts/omori_game-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
+	--blue-grey: #474853;
+  --light-purple: #CAB4DE;
+  --dark-grey: #3A3B3C;
+  --light-grey: #FAFAFA;
+  --text-steps: 45;
+  --animation-delay: 0;
+}
+
+* {
+	cursor: default;
+  font-family: 'OMORI_GAME', montserrat, "lucida sans unicode";
+  font-weight: 500;
+  font-size: 26px;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+	background-color: var(--dark-grey);
+	color: var(--light-grey);
+  margin: 0;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:visited {
+  color: var(--light-grey)
+}
+
+ul,
+li,
+a	{
+	list-style: none;
+}
+
+h1 {
+	font-size: 2rem;
+	text-align: center;
+	margin-top: 7rem;
+}
+
+input[type="text"] {
+	cursor: text;
+}
+
+header {
+	position: fixed;
+	top: 0;
+  width: 100%;
+  display: flex;
+  background-color: var(--dark-grey);
+  padding: 20px 4vmin;
+  max-height: 35px;
+}
+
+#header-img {
+	margin-right: auto;
+  width: 1rem;
+  cursor: pointer;
+}
+
+nav > ul {
+	display: flex;
+	flex-direction: rows;
+	margin: auto 3rem;
+}
+
+nav > ul > li > a {
+  margin: auto 2rem;
+	font-size: 1.1rem;
+	color: var(--light-grey);
+	transition: all 0.3s ease 0s;
+}
+
+nav > ul > li {
+  height: 2.5rem;
+}
+
+li:hover > a {
+	color: var(--light-grey);
+}
+
+.dropdown {
+  background-color: var(--light-grey);
+  color: black;
+  margin-top: 19px;
+  width: 5.23rem;
+  display: block;
+  position: absolute;
+  box-shadow: 8px 5px 10px var(--dark-grey);
+  transition: all 500ms;
+  overflow: hidden;
+  transform-origin: top;
+  transform: scale(1,0);
+}
+
+.dropdown > li {
+  padding: 15px 0;
+  text-align: center;
+  margin-left: -40px;
+}
+  
+.dropdown > li:hover {
+  background-color: var(--dark-grey);
+}
+
+
+.dropdown > li > a:visited,
+.dropdown > li > a:link{
+  color: black;
+}
+
+.dropdown > li:hover > a {
+  color: var(--light-grey);
+}
+
+.nav-dropdown:hover > ul {
+  display: block;
+  transform: scale(1);
+  transition-delay: 400ms;
+}
+
+.line-animate .hover::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #85929e;
+    transition: width 300ms;
+    margin-top: 17px;
+}
+.line-animate .hover:hover::after {
+    width: 100%;
+}
+
+#main-console {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80vh;
+}
+
+#intro {
+  margin: auto;
+  font-size: 26px;
+  font-weight: 100;
+  position: relative;
+  font-family: 'OMORI_GAME2';
+  letter-spacing: 1px;
+}
+
+.typeText::before,
+.typeText::after {
+  content:'';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.typeText::before {
+  background: var(--dark-grey);
+  animation: typewriter 1s steps(var(--text-steps)) forwards;
+  animation-delay: var(--animation-delay);
+  }
+
+
+@keyframes typewriter {
+  to { 
+    left: 100%
+  }
+}
+
+
+button {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 2rem auto auto auto;
+	padding: 0.6rem 2rem;
+	font-size: 1.3rem;
+	text-align: center;
+	animation-name: reverse;
+	animation-duration: 250ms;
+  border-radius: 2px;
+  border: none 0;
+  box-shadow: 8px 5px 10px var(--dark-grey);
+}
+  
+button:hover {
+	animation-name: grow;
+	animation-duration: 250ms;
+	animation-fill-mode: both;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  transition: all 75ms linear;
+  opacity: .75;
+  background: var(--light-grey);
+}
+
+@keyframes grow {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.03);
+	}
+}
+
+@keyframes reverse {
+	from {
+		transform: scale(1.03);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+
+footer {
+  position: absolute;
+  background-color: var(--dark-grey);
+  opacity: 80%;
+  width: 100%;
+  bottom: 0;
+}
+
+footer > ul {
+  display: flex;
+  justify-content: center;
+  padding: .3rem 3vmin 0 3vmin;
+}
+
+footer > ul > li > a {
+  padding: 0 1.5rem;
+  color: var(--light-grey)
+}
+
+footer > span {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  padding-bottom: 16px;
+  font-size: 18px;
+}
